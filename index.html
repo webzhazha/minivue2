@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <p>{{msg}}</p>
+    <p v-text="msg"></p>
+    <p v-html="msg"></p>
+    <input type="text" v-model="car.color">
+    <p>{{car.color}}</p>
+  </div>
+</body>
+</html>
+
+<script src="./watcher.js"></script>
+<script src="./observer.js"></script>
+<!-- 引入complier  模板解析器 -->
+<script src="./compiler.js"></script>
+<script src="./vue.js"></script>
+<script>
+  // 实现vue框架
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      msg: '哈哈',
+      test: '测试',
+      car: {
+        color: '黄色'
+      }
+    },
+    methods: {
+      func(){
+        console.log('点击按钮');
+        console.log(this.$data.msg);
+      }
+    },
+  })
+</script>
